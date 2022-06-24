@@ -28,8 +28,9 @@ $resistance = new Resistance('Lightning', 10);
 $energyType = new EnergyType('Fire');
 $charmeleon = new Charmeleon('Pikachu', $attacks, $weakness, $resistance, $energyType, 60);
 
-$battle = new Battle($pikachu, $charmeleon);
-//print_r($battle->getHealth());
+$battle = new Battle();
+$battle->alivePokemon($pikachu->getHealth(), $charmeleon->getHealth());
+print_r($pikachu->getHealth());
 
 echo 'Er zijn nu '.Statistieken::getPopulation(). ' pokemon levend!';
 

@@ -1,13 +1,13 @@
 <?php
 
-class Charmeleon
+class Charmeleon extends Pokemon
 {
-    protected $name;
-    protected $attack;
-    protected $weakness;
-    protected $resistance;
-    protected $energyType;
-    protected $health;
+    public $name;
+    public $attack;
+    public $weakness;
+    public $resistance;
+    public $energyType;
+    public $health;
 
     public function __construct($name, $attack, $weakness, $resistance, $energyType, $health){
         $this->name = $name;

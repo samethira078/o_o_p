@@ -18,4 +18,24 @@ abstract class Pokemon
         $this->health = $health;
     }
 
+    public function getAttack(){
+        return $this->attack;
+    }
+
+    public function getWeakness(){
+        return $this->weakness;
+    }
+
+    public function getResistance(){
+        return $this->resistance;
+    }
+
+    public function getEnergyType(){
+        return $this->energyType;
+    }
+
+    public function getHealth(){
+        return $this->health;
+    }
+
 }

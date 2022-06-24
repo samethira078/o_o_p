@@ -4,12 +4,20 @@ class Battle
 {
     protected $pikachu;
     protected $charmeleon;
+    protected $result;
 
-    public function __construct($pikachu, $charmeleon){
-        $this->pikachu = $pikachu;
-        $this->charmeleon = $charmeleon;
+    public function checkPowers(){
+        return $this->pikachu->weakness;
     }
-    public function getHealth(){
-        return $this->pikachu;
+
+    public function alivePokemon($first, $second){
+        if($first > 0 && $second > 0){
+            Statistieken::$alive = 2;
+        } else {
+            Statistieken::$alive = 1;
+        }
+    }
+    public function fight(){
+
     }
 }
