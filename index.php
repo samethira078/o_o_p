@@ -7,8 +7,8 @@ include_once 'classes/Attack.php';
 include_once 'classes/Weakness.php';
 include_once 'classes/Resistance.php';
 include_once 'classes/EnergyType.php';
-include_once 'classes/Battle.php';
 include_once 'static/Statistieken.php';
+include_once 'classes/Health.php';
 
 //PIKACHU
 $attack = new Attack('Electric Ring', 50);
@@ -17,22 +17,25 @@ $attacks = [$attack->getAttack(), $attack2->getAttack()];
 $weakness = new Weakness('Fire', 1.5);
 $resistance = new Resistance('Fighting', 20);
 $energyType = new EnergyType('Lightning');
-$pikachu = new Pikachu('Pikachu',$attacks, $weakness, $resistance, $energyType, 60);
+$health = new Health(606);
+$pikachu = new Pikachu('Pikachu',$attacks, $weakness, $resistance, $energyType, $health);
 
 //CHARMELEON
 $attack = new Attack('Flare', 30);
 $attack2 = new Attack('Head Butt', 10);
 $attacks = [$attack->getAttack(), $attack2->getAttack()];
 $weakness = new Weakness('Water', 2);
-$resistance = new Resistance('Lightning', 10);
+$resistance = new Resistance('Lightsning', 10);
 $energyType = new EnergyType('Fire');
-$charmeleon = new Charmeleon('Pikachu', $attacks, $weakness, $resistance, $energyType, 60);
+$health = new Health(650);
+$charmeleon = new Charmeleon('Charmeleon', $attacks, $weakness, $resistance, $energyType, $health);
+echo "<pre>";
+echo "Er zijn nu ". Statistieken::getPopulation()." levend!"."<br>";
+print_r($pikachu->fight($charmeleon));
+echo "Er zijn nu ". Statistieken::getPopulation()." levend!"."<br><br>";
+echo "Eindresultaat:"."<br>";
+echo "</pre>";
 
-$battle = new Battle();
-$battle->alivePokemon($pikachu->getHealth(), $charmeleon->getHealth());
-print_r($pikachu->getHealth());
-
-echo 'Er zijn nu '.Statistieken::getPopulation(). ' pokemon levend!';
 
 
 
