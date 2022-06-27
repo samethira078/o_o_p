@@ -9,7 +9,10 @@ abstract class Pokemon
     protected $energyType;
     protected $health;
 
+
+
     public function __construct($name, $attack, $weakness, $resistance, $energyType, $health){
+
         $this->name = $name;
         $this->attack = $attack;
         $this->weakness = $weakness;
@@ -24,12 +27,12 @@ abstract class Pokemon
 //            Health variable
             $amount = null;
 //              Your attack
-            echo $this->name." valt ".$enemy->name." aan met ".$this->attack[0]['name']. " en doet ";
+            echo $this->name." valt ".$enemy->name." aan met ".$this->attack[0]->getName(). " en doet ";
 //              Check if enemy has resistance, if so, less harsh attack
-            if($this->energyType->getEnergyType() === "Lightning" && $enemy->resistance->getResistance()['EnergyType'] === "Lightning"){
-                $amount = $this->attack[0]['attack']-$enemy->resistance->getResistance()['amount'];
+            if($this->energyType->getEnergyType() === "Lightning" && $enemy->resistance->getName() === "Lightning"){
+                $amount = $this->attack[0]->getAttack()-$enemy->resistance->getAmount();
             } else {
-                $amount = $this->attack[0]['attack'];
+                $amount = $this->attack[0]->getAttack();
             }
 //            Update health
             $enemy->health->setHealth($amount);
@@ -40,12 +43,12 @@ abstract class Pokemon
                 break;
             }
 //          Enemy attack
-            echo $enemy->name." valt ".$this->name." aan met ".$enemy->attack[0]['name']. " en doet ";
+            echo $enemy->name." valt ".$this->name." aan met ".$enemy->attack[0]->getName(). " en doet ";
 //              Check if yours has weakness to harsh attack
             if($this->health->getHealth() > 0 && $this->energyType->getEnergyType() === "Lightning" && $enemy->energyType->getEnergyType() === "Fire"){
-                $amount = $enemy->attack[0]['attack'] * $this->weakness->getWeakness()['multiplier'];
+                $amount = $enemy->attack[0]->getAttack() * $this->weakness->getAmount();
             } else {
-                $amount = $enemy->attack[0]['attack'];
+                $amount = $enemy->attack[0]->getAttack();
             }
 //            Update health
             $this->health->setHealth($amount);
