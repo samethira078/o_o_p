@@ -8,8 +8,15 @@ abstract class Pokemon
     protected $resistance;
     protected $energyType;
     protected $health;
+    private static $alive= 2;
 
+    public static function getPopulation(){
+        return self::$alive;
+    }
 
+    public static function setPopulation($amount){
+        return self::$alive = $amount;
+    }
 
     public function __construct($name, $attack, $weakness, $resistance, $energyType, $health){
 
@@ -22,6 +29,8 @@ abstract class Pokemon
     }
 //  FIGHT BATTLE
     public function fight($enemy){
+        //Echo amount of alive pokemons
+        echo "Er zijn nu ". $this::getPopulation()." levend!"."<br>";
 //        Loop through battle
         while($this->health->getHealth() > 0 || $enemy->health->getHealth() > 0){
 //            Health variable
@@ -60,7 +69,8 @@ abstract class Pokemon
             }
         }
 //        Change statics to one Pokemon alive
-        Statistieken::setPopulation(1);
+        $this::setPopulation(1);
+        echo "Er zijn nu ". $this::getPopulation()." levend!"."<br>";
     }
 //  AFTER BATTLE
     public function __destruct()

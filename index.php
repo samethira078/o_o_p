@@ -7,7 +7,6 @@ include_once 'classes/Attack.php';
 include_once 'classes/Weakness.php';
 include_once 'classes/Resistance.php';
 include_once 'classes/EnergyType.php';
-include_once 'static/Statistieken.php';
 include_once 'classes/Health.php';
 
 //PIKACHU
@@ -30,9 +29,7 @@ $energyType = new EnergyType('Fire');
 $health = new Health(60);
 $charmeleon = new Charmeleon('Charmeleon', $attacks, $weakness, $resistance, $energyType, $health);
 echo "<pre>";
-echo "Er zijn nu ". Statistieken::getPopulation()." levend!"."<br>";
 print_r($pikachu->fight($charmeleon));
-echo "Er zijn nu ". Statistieken::getPopulation()." levend!"."<br><br>";
 echo "Eindresultaat:"."<br>";
 echo "</pre>";
 
