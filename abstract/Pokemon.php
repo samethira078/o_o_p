@@ -8,12 +8,13 @@ abstract class Pokemon
     protected $resistance;
     protected $energyType;
     protected $health;
+//    Static amount of pokemon alive, which results to same for each child class
     private static $alive= 2;
-
+//  Return current int of alive pokemon
     public static function getPopulation(){
         return self::$alive;
     }
-
+//  Update assign data
     public static function setPopulation($amount){
         return self::$alive = $amount;
     }
@@ -27,7 +28,7 @@ abstract class Pokemon
         $this->energyType = $energyType;
         $this->health = $health;
     }
-//  FIGHT BATTLE
+//  Let the pokemon battle with enemy object as parameter.
     public function fight($enemy){
         //Echo amount of alive pokemons
         echo "Er zijn nu ". $this::getPopulation()." levend!"."<br>";
