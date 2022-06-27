@@ -13,21 +13,21 @@ include_once 'classes/Health.php';
 //PIKACHU
 $attack = new Attack('Electric Ring', 50);
 $attack2 = new Attack('Pika Punch', 20);
-$attacks = [$attack->getAttack(), $attack2->getAttack()];
+$attacks = [$attack, $attack2];
 $weakness = new Weakness('Fire', 1.5);
 $resistance = new Resistance('Fighting', 20);
 $energyType = new EnergyType('Lightning');
-$health = new Health(606);
+$health = new Health(60);
 $pikachu = new Pikachu('Pikachu',$attacks, $weakness, $resistance, $energyType, $health);
 
 //CHARMELEON
 $attack = new Attack('Flare', 30);
 $attack2 = new Attack('Head Butt', 10);
-$attacks = [$attack->getAttack(), $attack2->getAttack()];
+$attacks = [$attack, $attack2];
 $weakness = new Weakness('Water', 2);
 $resistance = new Resistance('Lightsning', 10);
 $energyType = new EnergyType('Fire');
-$health = new Health(650);
+$health = new Health(60);
 $charmeleon = new Charmeleon('Charmeleon', $attacks, $weakness, $resistance, $energyType, $health);
 echo "<pre>";
 echo "Er zijn nu ". Statistieken::getPopulation()." levend!"."<br>";

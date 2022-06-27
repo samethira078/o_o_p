@@ -1,14 +1,7 @@
 <?php
-
+//Child class of abstracted parent pokemon which includes each individual properties
 class Charmeleon extends Pokemon
 {
-    protected $name;
-    protected $attack;
-    protected $weakness;
-    protected $resistance;
-    protected $energyType;
-    protected $health;
-
     public function __construct($name, $attack, $weakness, $resistance, $energyType, $health){
         $this->name = $name;
         $this->attack = $attack;
@@ -16,5 +9,7 @@ class Charmeleon extends Pokemon
         $this->resistance = $resistance;
         $this->energyType = $energyType;
         $this->health = $health;
+        parent::__construct($name, $attack, $weakness, $resistance, $energyType, $health);
     }
+
 }

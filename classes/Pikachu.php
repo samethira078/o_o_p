@@ -1,14 +1,7 @@
 <?php
-
+//Child class of abstracted parent pokemon which includes each individual properties
 class Pikachu extends Pokemon
 {
-    protected $name;
-    protected $attack;
-    protected $weakness;
-    protected $resistance;
-    protected $energyType;
-    protected $health;
-
     public function __construct($name, $attack, $weakness, $resistance, $energyType, $health)
     {
         $this->attack = $attack;
