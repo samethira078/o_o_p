@@ -1,5 +1,5 @@
 <?php
-
+//Function to assign and summon energyType properties from the parent for each individual pokemon.
 class EnergyType
 {
     private $energyType;

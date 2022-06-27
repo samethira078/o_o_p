@@ -1,5 +1,5 @@
 <?php
-
+//Function to assign and health properties from the parent for each individual pokemon.
 class Health
 {
     private $health;

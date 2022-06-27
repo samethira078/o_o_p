@@ -1,17 +1,19 @@
 <?php
-
+//Function to assign and summon weakness properties from the parent for each individual pokemon.
 class Weakness
 {
-    private $weakness;
+    private $name;
+    private $amount;
 
     public function __construct($name, $amount){
-        $this->weakness = ["EnergyType" => $name, "multiplier" => $amount];
+        $this->name = $name;
+        $this->amount = $amount;
     }
 
-    public function getWeakness(){
-        return $this->weakness;
+    public function getName(){
+        return $this->name;
     }
-    public function setWeakness($weakness){
-        return $this->weakness = $weakness;
+    public function getAmount(){
+        return $this->amount;
     }
 }
